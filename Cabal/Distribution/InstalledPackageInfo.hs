@@ -183,7 +183,7 @@ instance Text ExposedModule where
     disp (ExposedModule m reexport) =
         Disp.sep [ disp m
                  , case reexport of
-                    Just m' -> Disp.sep [Disp.text "from", disp m']
+                    Just m' -> Disp.text "from " Disp.<> disp m'
                     Nothing -> Disp.empty
                  ]
     parse = do
